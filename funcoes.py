@@ -7,7 +7,7 @@ def rolar_dados(x):
     return resultados
 
 def guardar_dado(dados_rolados, dados_no_estoque, dado_para_guardar):
-    
+
     valor = dados_rolados[dado_para_guardar]
     
     dados_rolados.pop(dado_para_guardar)
@@ -25,3 +25,11 @@ def remover_dado(dados_rolados, dados_no_estoque, dado_para_remover):
     dados_rolados.append(valor)
     
     return [dados_rolados, dados_no_estoque]
+
+def calcula_pontos_regra_simples(dados_rolados):
+    pontos = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
+    
+    for dado in dados_rolados:
+        pontos[dado] += dado
+    
+    return pontos
