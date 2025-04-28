@@ -26,4 +26,7 @@ def calcula_pontos_regra_simples(lista):
     return pontuacao
 
 def calcula_pontos_soma(lista):
-    return sum(lista)
+    total = 0
+    for valor in lista:
+        total += valor
+    return total
