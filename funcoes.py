@@ -42,3 +42,15 @@ def calcula_pontos_sequencia_baixa(lista):
         elif lista_ordenada[i] != lista_ordenada[i-1]:
             contador = 1
     return 0
+
+def calcula_pontos_sequencia_alta(lista):
+    lista_ordenada = sorted(lista)
+    contador = 1
+    for i in range(1, len(lista_ordenada)):
+        if lista_ordenada[i] == lista_ordenada[i-1] + 1:
+            contador += 1
+            if contador >= 5:
+                return 30
+        elif lista_ordenada[i] != lista_ordenada[i-1]:
+            contador = 1
+    return 0
