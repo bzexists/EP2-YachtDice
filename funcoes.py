@@ -30,3 +30,15 @@ def calcula_pontos_soma(lista):
     for valor in lista:
         total += valor
     return total
+
+def calcula_pontos_sequencia_baixa(lista):
+    lista_ordenada = sorted(lista)
+    contador = 1
+    for i in range(1, len(lista_ordenada)):
+        if lista_ordenada[i] == lista_ordenada[i-1] + 1:
+            contador += 1
+            if contador >= 4:
+                return 15
+        elif lista_ordenada[i] != lista_ordenada[i-1]:
+            contador = 1
+    return 0
